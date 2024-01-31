@@ -9,6 +9,8 @@ public class StockDto {
 
     private Long id;
 
+    private String name;
+
     private Long itemId;
 
     private Integer qty;

@@ -29,7 +29,8 @@ public class StockServiceImpl implements StockService {
             throw new EntityNotFoundException("Item not found");
         }
         Stock stock = new Stock();
-        stock.setItem(item);
+        stock.setId(stockDto.getItemId());
+        stock.setName(stockDto.getName());
         stock.setQty(stockDto.getQty());
         return stockRepository.save(stock);
     }

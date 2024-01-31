@@ -22,6 +22,8 @@ public class Stock {
     @JoinColumn(name = "item_id")
     private Item item;
 
+    private String name;
+
     private Integer qty;
     
 }
