@@ -33,6 +33,8 @@ public class StockServiceImpl implements StockService {
         stock.setName(stockDto.getName());
         stock.setQty(stockDto.getQty());
         return stockRepository.save(stock);
+
+        
     }
 
     @Override
@@ -41,6 +43,7 @@ public class StockServiceImpl implements StockService {
         .orElseThrow(() -> new EntityNotFoundException("Stock not found"));
         existingStock.setQty(stockDto.getQty());
         return stockRepository.save(existingStock);
+        
     }
 
     @Override

@@ -27,7 +27,7 @@ public class PosController {
         return ResponseEntity.status(200).body(posService.getAllOrders());
     }
 
-    @GetMapping("/orders/(id)")
+    @GetMapping("/orders/{id}")
     public ResponseEntity<Pos> getOrderById(@PathVariable Long id) {
         return ResponseEntity.status(200).body(posService.getOrderById(id));
     }

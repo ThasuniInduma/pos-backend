@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "sales")
+@Table(name = "orders")
 public class Pos {
 
     @Id
@@ -39,8 +39,8 @@ public class Pos {
     
     @ManyToMany
     @JoinTable(
-        name = "pos_product",
-        joinColumns = @JoinColumn(name = "pos_id"),
+        name = "order_Item",
+        joinColumns = @JoinColumn(name = "order_id"),
         inverseJoinColumns = @JoinColumn(name = "item_id")
     )
     private Set<Item> items = new HashSet<>();

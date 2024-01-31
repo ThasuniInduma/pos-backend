@@ -41,7 +41,10 @@ public class PosServiceImpl implements PosService {
             if(item != null && item.getQty() != 0){
                 itemSet.add(item);
                 pos.setTotal(pos.getTotal()+item.getPrice());
-            }
+                 //Reduce the QTY of current stock
+                 item.setQty(item.getQty() - 1);
+                 itemRepository.save(item);
+                }
         }
         Double tax = pos.getTotal()*10/100;
 
